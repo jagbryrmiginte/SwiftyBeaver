@@ -252,9 +252,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		9EDCE3E31C09D211002FA4A7 /* SwiftyBeaver (iOS) */ = {
+		9EDCE3E31C09D211002FA4A7 /* SwiftyBeaver (iOS/macOS) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9EDCE3F81C09D211002FA4A7 /* Build configuration list for PBXNativeTarget "SwiftyBeaver (iOS)" */;
+			buildConfigurationList = 9EDCE3F81C09D211002FA4A7 /* Build configuration list for PBXNativeTarget "SwiftyBeaver (iOS/macOS)" */;
 			buildPhases = (
 				9EDCE3DF1C09D211002FA4A7 /* Sources */,
 				9EDCE3E01C09D211002FA4A7 /* Frameworks */,
@@ -265,7 +265,7 @@
 			);
 			dependencies = (
 			);
-			name = "SwiftyBeaver (iOS)";
+			name = "SwiftyBeaver (iOS/macOS)";
 			productName = SwiftyBeaver;
 			productReference = 9EDCE3E41C09D211002FA4A7 /* SwiftyBeaver.framework */;
 			productType = "com.apple.product-type.framework";
@@ -385,7 +385,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9EDCE3E31C09D211002FA4A7 /* SwiftyBeaver (iOS) */,
+				9EDCE3E31C09D211002FA4A7 /* SwiftyBeaver (iOS/macOS) */,
 				9EDCE3ED1C09D211002FA4A7 /* SwiftyBeaverTests */,
 				ACE597751C1882DF0031451F /* SwiftyBeaver (watchOS) */,
 				ACE597861C18830D0031451F /* SwiftyBeaver (tvOS) */,
@@ -522,7 +522,7 @@
 /* Begin PBXTargetDependency section */
 		9EDCE3F11C09D211002FA4A7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 9EDCE3E31C09D211002FA4A7 /* SwiftyBeaver (iOS) */;
+			target = 9EDCE3E31C09D211002FA4A7 /* SwiftyBeaver (iOS/macOS) */;
 			targetProxy = 9EDCE3F01C09D211002FA4A7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -646,6 +646,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
+				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
@@ -658,8 +659,10 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.SwiftyBeaver.SwiftyBeaver;
 				PRODUCT_NAME = SwiftyBeaver;
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos macosx";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
+				VALID_ARCHS = "$(ARCHS_STANDARD) x86_64";
 			};
 			name = Debug;
 		};
@@ -667,6 +670,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
+				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
@@ -679,8 +683,10 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.SwiftyBeaver.SwiftyBeaver;
 				PRODUCT_NAME = SwiftyBeaver;
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos macosx";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 4.2;
+				VALID_ARCHS = "$(ARCHS_STANDARD) x86_64";
 			};
 			name = Release;
 		};
@@ -689,12 +695,18 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)",
+					"$(inherited)",
+				);
 				INFOPLIST_FILE = Tests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.SwiftyBeaver.SwiftyBeaverTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos macosx";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
+				VALID_ARCHS = "$(ARCHS_STANDARD) x86_64";
 			};
 			name = Debug;
 		};
@@ -703,12 +715,18 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)",
+					"$(inherited)",
+				);
 				INFOPLIST_FILE = Tests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.SwiftyBeaver.SwiftyBeaverTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos macosx";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 4.2;
+				VALID_ARCHS = "$(ARCHS_STANDARD) x86_64";
 			};
 			name = Release;
 		};
@@ -880,7 +898,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9EDCE3F81C09D211002FA4A7 /* Build configuration list for PBXNativeTarget "SwiftyBeaver (iOS)" */ = {
+		9EDCE3F81C09D211002FA4A7 /* Build configuration list for PBXNativeTarget "SwiftyBeaver (iOS/macOS)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9EDCE3F91C09D211002FA4A7 /* Debug */,
